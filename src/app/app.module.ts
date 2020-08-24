@@ -1,15 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+// import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { from } from 'rxjs';
+import { ServerComponent } from './server/server.component';
+// import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ServerComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
