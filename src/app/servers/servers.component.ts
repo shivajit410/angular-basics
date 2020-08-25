@@ -12,6 +12,8 @@ export class ServersComponent implements OnInit {
   serverName = 'TestServer';
   serverCreated = false;
   servers = ['TestServer 1', 'TestServer 2'];
+  buttonClicked = false;
+  count = [];
 
   // userCreationStatus = "No user was created.";
   username = '';
@@ -33,6 +35,12 @@ export class ServersComponent implements OnInit {
 
   onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+  onButtonClicked() {
+    this.buttonClicked = !this.buttonClicked;
+    // this.count.push(this.count.length + 1);
+    this.count.push(new Date);
   }
 
 }

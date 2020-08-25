@@ -1,20 +1,43 @@
-<label for="">Server Name</label>
+<!-- <label for="">Server Name</label> -->
 <!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
-<input type="text" class="form-control" [(ngModel)]="serverName">
+<!-- <input type="text" class="form-control" [(ngModel)]="serverName"> -->
 <!-- <p>{{ serverName }}</p> -->
-<hr>
-<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
-<hr>
+<!-- <hr> -->
+<!-- <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button> -->
+<!-- <hr> -->
 <!-- <p>{{ serverCreationStatus }}</p> -->
-<p *ngIf="serverCreated">Server was created. Name is {{ serverName }}</p>
+<!-- <p *ngIf="serverCreated">Server was created. Name is {{ serverName }}</p> -->
 
-<label for="">Username</label>
-<input type="text" class="form-control" [(ngModel)]="username">
-<hr>
-<button class="btn btn-primary" [disabled]="username === ''" (click)="username = ''">Reset user</button>
-<hr>
-<p>{{ username }}</p>
+<!-- <label for="">Username</label> -->
+<!-- <input type="text" class="form-control" [(ngModel)]="username"> -->
+<!-- <hr> -->
+<!-- <button class="btn btn-primary" [disabled]="username === ''" (click)="username = ''">Reset user</button> -->
+<!-- <hr> -->
+<!-- <p>{{ username }}</p> -->
 
-<hr>
-<app-server *ngFor="let server of servers"></app-server>
+<!-- <hr> -->
+<!-- <app-server *ngFor="let server of servers"></app-server> -->
 <!-- <app-server></app-server> -->
+<ol>
+  <li>Add a button which says 'Display Details'</li>
+  <li>Add a paragraph with any content of your choice (eg. 'Secret Password = tuna')</li>
+  <li>Toggle the displaying of that paragraph with the button created in the first step</li>
+  <li>
+    Log all button clicks in an array and output that array below the secret paragraph (Timestamp or incrementing
+    number)
+  </li>
+  <li>
+    Starting at 5th log item, give all the future log items a blue background (via ngStyle) and white color (via
+    ngClass)
+  </li>
+</ol>
+<hr>
+
+<button class="btn btn-primary" (click)="onButtonClicked()">Display Details</button>
+<p *ngIf="buttonClicked">Secret Password = tuna</p>
+
+<div *ngFor="let logItem of count; let i = index" [ngStyle]="{backgroundColor: i >= 5 ? 'blue' : 'transparent'}"
+  [ngClass]="{ 'white-text' : i >= 5}">{{ logItem }}
+</div>
+
+<!-- <p [ngStyle]="{backgroundColor: getColor()}">{{ count }}</p> -->
